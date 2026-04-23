@@ -63,13 +63,24 @@ No npm. No build step. No existential crisis.
 
 ## 🤝 Contributing
 
-Got a better excuse? PRs are welcome.
+Agar tumhare paas koi **epic developer excuse** hai jo yahan nahi hai — PR bhejo. Hum sab ek hi kashti mein hain. 🛶
 
-```bash
-# Add your excuse in script.js under the right category
-# Format:
-{ text: "Your excuse with <em>highlighted part</em>", bs: 75 }
+### Steps:
+1. **Fork** this repo
+2. `script.js` kholo aur sahi category mein apna excuse daalo
+3. Format follow karo:
+
+```js
+// <em> tag us part pe lagao jo highlight hona chahiye (yellow color)
+// bs: bullshit level — 0 (believable) se 99 (complete bakwaas) tak
+
+{ text: "Bhai <em>tumhara highlighted part yahan</em> likho, baaki excuse yahan.", bs: 75 }
 ```
+
+4. **Commit** karo — message mein kuch creative likho, `fix` mat likho 😅
+5. **Pull Request** open karo
+
+> ⭐ Agar project pasand aaya toh star dena mat bhoolo — open source developers ka yahi salary hai.😂
 
 ---
 
