@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevExcuse.exe</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&family=DM+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="logo">⚠</div>
+        <h1>DEVEXCUSE.EXE</h1>
+        <p class="tagline">
+          // blame anything. survive everything. <span class="blink">_</span>
+        </p>
+      </header>
+      <div class="chips" id="categories">
+        <button class="chip active" data-cat="all">ALL</button>
+        <button class="chip" data-cat="git">GIT</button>
+        <button class="chip" data-cat="prod">PROD</button>
+        <button class="chip" data-cat="ai">AI</button>
+        <button class="chip" data-cat="boss">BOSS</button>
+        <button class="chip" data-cat="infra">INFRA</button>
+        <button class="chip" data-cat="env">ENV</button>
+      </div>
+      <div class="card" id="excuseCard">
+        <div class="card-label">LATEST EXCUSE</div>
+        <p class="excuse-text" id="excuseText">
+          Press <em>GENERATE</em> to load your next survival tactic.
+        </p>
+        <div class="bs-bar">
+          <span class="bs-label">BS LEVEL</span>
+          <div class="track"><div class="fill" id="bsBar"></div></div>
+          <span class="bs-pct" id="bsPct">–</span>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn-main" onclick="generate()">⚡ GENERATE</button>
+        <button class="btn-icon" title="Copy" onclick="copyIt()">📋</button>
+        <button class="btn-icon" title="WhatsApp" onclick="shareIt()">
+          📤
+        </button>
+      </div>
+      <div class="history-section">
+        <div class="sec-title">// EXCUSE LOG //</div>
+        <div id="historyList">
+          <div class="hist-item">
+            <span class="dot"></span>Abhi koi excuse nahi…
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="toast" id="toast"></div>
+    <footer>
+      <div class="cheesy-line" id="cheesyLine">
+        // loading developer wisdom...
+      </div>
+      <div class="made-by">
+        crafted with <span class="heart">❤</span> &amp;
+        <span class="coffee">☕</span> by
+        <span class="author">Raunak Mishra</span>
+      </div>
+      <div class="made-sub">
+        // git blame won't find him. he's too smart for that.
+      </div>
+    </footer>
+    <style>
+      footer {
+        text-align: center;
+        padding: 40px 24px 48px;
+        position: relative;
+        z-index: 1;
+        border-top: 1px solid var(--border);
+        margin-top: 48px;
+      }
+      .cheesy-line {
+        font-family: "Share Tech Mono", monospace;
+        font-size: 13px;
+        color: var(--accent2);
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        min-height: 20px;
+        transition: opacity 0.4s;
+        opacity: 0.85;
+      }
+      .made-by {
+        font-family: "DM Sans", sans-serif;
+        font-size: 15px;
+        color: var(--muted);
+        letter-spacing: 1px;
+      }
+      .heart {
+        color: #ff4d6d;
+        font-style: normal;
+      }
+      .coffee {
+        font-style: normal;
+      }
+      .author {
+        color: var(--text);
+        font-weight: 600;
+        background: linear-gradient(90deg, #ff4d6d, #00f5d4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .made-sub {
+        font-family: "Share Tech Mono", monospace;
+        font-size: 10px;
+        color: var(--accent2);
+        letter-spacing: 2px;
+        margin-top: 8px;
+        opacity: 0.45;
+      }
+    </style>
+    <script src="script.js"></script>
+    <script>
+      const cheesyLines = [
+        "// It works on my machine. Ship the machine.",
+        "// 99 little bugs in the code... 99 little bugs... take one down, patch it around... 127 little bugs in the code.",
+        "// A QA engineer walks into a bar. Orders 0 beers. Orders 999999 beers. Orders -1 beers. Orders a lizard.",
+        "// The best code is no code at all.",
+        "// First, solve the problem. Then, write the code. Then, blame the intern.",
+        "// Any fool can write code a computer understands. Raunak writes code humans pretend to understand.",
+        "// console.log('please work'); — every developer, always.",
+        "// It's not a bug. It's an undocumented feature with extra steps.",
+        "// Sleep is for people who don't have production incidents.",
+        "// sudo make me a sandwich. Works every time.",
+        "// I don't always test my code, but when I do, I do it in production.",
+        "// CSS: 2 hours to center a div. Lifetime to explain why.",
+        "// Stack Overflow is just really expensive copy-paste.",
+        "// Dear future me: I'm sorry. Past me made some choices.",
+      ];
+      let idx = Math.floor(Math.random() * cheesyLines.length);
+      const el = document.getElementById("cheesyLine");
+      el.textContent = cheesyLines[idx];
+      setInterval(() => {
+        el.style.opacity = "0";
+        setTimeout(() => {
+          idx = (idx + 1) % cheesyLines.length;
+          el.textContent = cheesyLines[idx];
+          el.style.opacity = "0.85";
+        }, 450);
+      }, 4000);
+    </script>
+  </body>
+</html>
